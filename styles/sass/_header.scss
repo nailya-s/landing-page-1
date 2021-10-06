@@ -31,8 +31,7 @@
         }
     }
 
-    @include breakpoint-down(medium) {
-    }
+    @include breakpoint-down(medium) {}
 
     @include breakpoint-down(small) {
         width: 300px;
@@ -50,7 +49,7 @@
         width: 100%;
         height: 100%;
         display: none;
-        background: rgba(255, 255, 255, 0.7);
+
 
         &.active {
             @include breakpoint-down(small) {
@@ -66,6 +65,7 @@
             position: absolute;
             z-index: 101;
             background: rgba(0, 0, 0, 0.4);
+
         }
 
         &_nav {
@@ -74,9 +74,14 @@
             position: absolute;
             z-index: 102;
             height: 100%;
-            left: 60%;
-            top: 0%;
+            left: 5%;
+            top: 33%;
             background: white;
+            box-shadow: 0px -12px 24px rgba(126, 120, 120, 0.25);
+            backdrop-filter: blur(50px);
+            /* Note: backdrop-filter has minimal browser support */
+
+            border-radius: 24px 24px 0px 0px;
         }
     }
 
@@ -413,17 +418,42 @@
         position: absolute;
         width: 320px;
         height: 413px;
-        
+
 
     }
 
     &__mobile_nav {
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0px -12px 24px rgba(126, 120, 120, 0.25);
+        backdrop-filter: blur(50px);
+
+        /* Note: backdrop-filter has minimal browser support */
+        h5 {
+            text-align: center;
+            font-weight: bold;
+        }
+
         .list {
+
             >ul {
                 padding-left: 0;
+
+                >li {
+                    padding-left: 10px;
+                    padding-bottom: 10px;
+                }
+
+                .verticalLine {
+                    width: 160px;
+                    height: 2px;
+                    background-color: $mainColor;
+                }
+
                 a {
+                    font-family: 'Ubuntu';
                     text-decoration: none;
                     color: $black;
+                    font-size: $font-xss;
                 }
 
             }

@@ -53,9 +53,11 @@
             box-shadow: inset -3px 3px 4px rgba(255, 255, 255, 0.2);
             filter: drop-shadow(8px -8px 10px rgba(255, 255, 255, 0.07)) drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.25)) drop-shadow(-30px 30px 30px rgba(0, 0, 0, 0.2)) drop-shadow(-45px 45px 70px rgba(83, 12, 12, 0.2));
 
+            @include breakpoint-down(large) {
+                top:0;
+            }
             @include breakpoint-down(medium) {
-                top: -96px;
-
+               
                 >svg {
                     width: 304px;
                     height: 304px;
@@ -63,6 +65,7 @@
             }
 
             @include breakpoint-down(small) {
+                top: 0;
                 width: 218px;
                 height: 247px;
 
