@@ -1,0 +1,406 @@
+.cases {
+    font-family: 'Gotham Pro';
+    max-width:1920px;
+    margin: 0 auto;
+    
+    @include breakpoint-down(medium) {
+        margin-top: 48px;
+    }
+
+    h1 {
+        margin-top: 108px;
+        margin-left: 60px;
+        margin-bottom: 32px;
+
+        @include breakpoint-down(medium) {
+            font-size: $font-l;
+            margin-top: 0;
+        }
+
+        @include breakpoint-down(small) {
+            font-size: $font-xs;
+            margin-top: 0;
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+    }
+
+    h2 {
+        margin-top: 24px;
+        margin-left: 60px;
+        margin-bottom: 16px;
+       
+
+        @include breakpoint-down(medium) {
+            font-size: $font-med+4;
+        }
+
+        @include breakpoint-down(small) {
+            font-size: $font-xss+2;
+            margin-left: 20px;
+            margin-bottom: 16px;
+
+        }
+    }
+
+    p {
+        font-size: $font-xss;
+        line-height: $font-xss+6;
+        @include breakpoint-up(medium);
+
+        @include breakpoint-down(medium) {
+            font-size: 16px;
+        }
+
+        @include breakpoint-down(small) {
+            font-size: 14px;
+
+        }
+    }
+
+    &__examples {
+        .container {
+            height: auto;
+            
+        }
+    }
+
+    &__partners {
+        .container {
+            height: 200px;
+            display: flex;
+            align-items: center;
+
+            @include breakpoint-down(small) {
+                width: 280px;
+                height: 67px;
+            }
+
+        }
+
+    }
+
+    &__cards {
+        padding-top: 40px;
+        margin-left: 8px;
+        flex-wrap: wrap;
+        @include breakpoint-up(medium);
+
+        @include breakpoint-down(medium) {
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            padding-top: 24px;
+        }
+
+
+    }
+
+    &__card {
+        margin-left: 24px;
+        margin-bottom: 40px;
+        width: 416px;
+        height: 280px;
+        background: #FFFFFF;
+        box-shadow: 0px 8px 32px rgba(103, 97, 97, 0.1);
+        border-radius: 12px;
+        font-size: $font-xss;
+
+        @include breakpoint-down(medium) {
+            width: 416px;
+            height: 260px;
+            margin-bottom: 16px;
+        }
+
+        @include breakpoint-down(small) {
+            width: 224px;
+            height: 208px;
+            margin-bottom: 24px;
+            margin-left: 16px;
+        }
+
+        >img {
+            margin: 24px;
+            width: 200px;
+            height: 56px;
+
+            @include breakpoint-down(small) {
+                width: 128px;
+                height: 36px;
+                margin-left: 12px;
+                margin-top: 12px;
+                margin-bottom: 0;
+            }
+
+        }
+
+        >h5 {
+            margin: 0;
+            margin-left: 24px;
+            margin-bottom: 16px;
+
+            @include breakpoint-down(small) {
+                margin-bottom: 0;
+                margin-left: 14px;
+            }
+
+            >div {
+                @include breakpoint-down(small) {}
+
+                &.country {
+                    display: inline-flex;
+
+                }
+
+                &.company {
+                    display: inline-flex;
+                    font-weight: bold;
+                }
+            }
+
+        }
+
+        >p {
+            margin: 0;
+            margin-left: 22px;
+            width: 370px;
+            height: 72px;
+
+            @include breakpoint-down(small) {
+                width: 200px;
+                height: 80px;
+                margin-left: 12px;
+                margin-top: 8px;
+            }
+
+            a {
+                margin-top: 8px;
+                text-decoration: none;
+                color: $black;
+                font-size: 14px;
+            }
+
+            &.smText {
+                height: auto;
+            }
+        }
+
+        >div {
+            &.showBtn {
+                content: '';
+                width: 120px;
+                height: 120px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 100%;
+                margin-top: 56px;
+                margin-left: 148px;
+                margin-bottom: 16px;
+
+
+
+                img {
+                    margin-top: 30%;
+                    margin-left: 26%;
+                }
+            }
+        }
+
+        &:last-child {
+            background-color: $mainColor;
+
+            &.clicked {
+                display: none;
+            }
+        }
+
+        .caseMore {
+            margin-top: 192px;
+            margin-left: 165px;
+            color: white;
+
+        }
+
+
+    }
+
+    &__example {
+        width: 100%;
+        background: #FFFFFF;
+        border-radius: 12px;
+        margin: 0;
+        margin-left: 32px;
+        display: none;
+
+        &.clicked {
+            display: flex;
+        }
+        .case-heading {
+            @include breakpoint-down(small) {
+                flex-direction: column;
+            }
+            
+        }
+
+        .case-description {
+            display: flex;
+            justify-content: space-between;
+            @include breakpoint-down(small) {
+                flex-direction: column;
+            }
+        }
+        .btnConsult {
+            text-align: center;
+        }
+
+        @include breakpoint-down(medium) {
+            width: 100%;
+            height: auto;
+            margin-left: 24px;
+        }
+
+
+        @include breakpoint-down(small) {
+            width: 100%;
+            height: auto;
+            margin: 16px 27px;
+        }
+
+        h2,
+        h5 {
+            color: $mainColor;
+            font-weight: bold;
+            margin: 0;
+
+            @include breakpoint-down(medium) {}
+
+            @include breakpoint-down(small) {
+                font-size: $font-xss;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        h1 {
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+
+    &__container {
+        width:100%;
+        margin: 40px;
+        
+
+        @include breakpoint-down(medium) {
+            width: 100%;
+        }
+        @include breakpoint-down(small) {
+            width: 100%;
+        }
+
+        .title {
+            flex-direction: column;
+
+            >div {
+                &:not(:last-child) {
+                    margin-bottom: 24px;
+                    @include breakpoint-down(small) {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .text {
+                display: inline-flex;
+                font-weight: bold;
+            }
+
+            .client {
+                display: inline-flex;
+                color: black;
+            }
+        }
+
+        .technologies {
+            margin-right: 179px;
+
+            @include breakpoint-down(medium) {
+                margin-right: 32px;
+            }
+
+
+
+            h5 {
+                font-weight: bold;
+                color: black;
+                margin: 0;
+
+
+            }
+
+            p {
+                font-size: $font-xss;
+
+                @include breakpoint-down(medium) {
+                    font-size: 14px;
+                }
+                @include breakpoint-down(medium) {
+                    width:inherit;
+                }
+            }
+        }
+
+        .solution {
+            h4 {
+                margin: 0;
+                color: $mainColor;
+            }
+        }
+
+        .block {
+            width: 100%;
+            height: auto;
+            margin: 0;
+
+            @include breakpoint-down(medium) {
+                height: auto;
+            }
+
+            @include breakpoint-down(small) {
+                height: auto;
+            }
+
+            p {
+                @include breakpoint-down(medium) {
+                    font-size: 14px;
+                }
+
+            }
+
+            h4 {
+                margin: 0;
+                margin-top: 24px;
+
+                @include breakpoint-down(medium) {
+                    font-size: $font-xs;
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .divider img {
+            @include breakpoint-down(medium) {
+                width: 0px;
+            }
+        }
+
+
+
+        @include breakpoint-down(small) {
+            margin-left: 16px;
+        }
+    }
+
+
+}

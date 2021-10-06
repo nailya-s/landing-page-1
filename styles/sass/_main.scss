@@ -1,0 +1,200 @@
+.main {
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+
+    &__col {
+        width: 50%;
+
+        .container_picture_right {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            @include breakpoint-down(large) {
+                margin: 0 auto;
+                display: block;
+                max-width: 600px;
+            }
+        }
+        @include breakpoint-down(large) {
+            width: 100%;
+            &:nth-child(1) {
+                order: 1;
+            }
+            &:nth-child(2) {
+                order: 0;
+            }
+        }
+    }
+
+
+
+
+    &__container {
+        width: initial;
+        /* height: 960px; */
+
+        @include breakpoint-down(medium) {
+            
+        }
+
+        @include breakpoint-down(small) {
+           
+        }
+
+        .logo {
+            position: absolute;
+            top: -167px;
+            bottom: 167px;
+            left: 37px;
+            opacity: 0.25;
+            z-index: -1;
+            stroke-width: 2px;
+            box-shadow: inset -3px 3px 4px rgba(255, 255, 255, 0.2);
+            filter: drop-shadow(8px -8px 10px rgba(255, 255, 255, 0.07)) drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.25)) drop-shadow(-30px 30px 30px rgba(0, 0, 0, 0.2)) drop-shadow(-45px 45px 70px rgba(83, 12, 12, 0.2));
+
+            @include breakpoint-down(medium) {
+                top: -96px;
+
+                >svg {
+                    width: 304px;
+                    height: 304px;
+                }
+            }
+
+            @include breakpoint-down(small) {
+                width: 218px;
+                height: 247px;
+
+
+                >svg {
+                    width: 218px;
+                    height: 247px;
+                }
+            }
+        }
+    }
+
+    &__headline {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 250px;
+        @include breakpoint-up(medium);
+
+        @include breakpoint-down(large) {
+            flex-direction: column;
+        }
+
+        @include breakpoint-down(large) {
+            margin-top: 0px;
+        }
+
+        @include breakpoint-down(small) {
+            margin-top: 60px;
+        }
+
+        button {
+            margin-top: 40px;
+            @include breakpoint-up(medium);
+
+            @include breakpoint-down(medium) {
+                margin-top: 24px;
+            }
+
+            @include breakpoint-down(small) {
+               
+            }
+        }
+
+    }
+
+    &__text {
+        /* position: absolute;
+  width: 800px; */
+        @include breakpoint-down(large) {
+            margin: 0 auto;
+            max-width: 950px;
+            text-align: center;
+            br {
+                display: none;
+            }
+        }
+        @include breakpoint-up(medium);
+
+        @include breakpoint-down(medium) {
+        }
+
+        @include breakpoint-down(small) {
+        }
+
+        h1 {
+            font-style: normal;
+            margin: 0;
+            /* or 125% */
+            letter-spacing: 0.05em;
+            
+            @include breakpoint-down(medium) {
+                font-size:$font-med;
+            }
+            @include breakpoint-down(small) {
+                font-size: $font-xs;
+                line-height: 32px;
+            }
+        }
+
+        p {
+            height: 108px;
+            margin: 0;
+            margin-top: 32px;
+            @include breakpoint-up(medium);
+
+            @include breakpoint-down(medium) {
+                margin-top: 16px;
+                height: 96px;
+            }
+
+            @include breakpoint-down(small) {
+                margin-top: 10px;
+                height: 80px;
+            }
+
+
+        }
+
+        .special {
+            width: 222px;
+            height: 64px;
+            background: white;
+            box-shadow: 0px 8px 16px rgba(116, 115, 115, 0.15);
+            border-radius: 12px;
+            color: black;
+            margin-left: 24px;
+            @include breakpoint-up(medium);
+
+            @include breakpoint-down(medium) {
+                width: 191px;
+                height: 48px;
+                margin-left: 16px;
+            }
+
+            @include breakpoint-down(small) {
+                width: 140px;
+                height: 36px;
+                margin-left: 0;
+                margin-bottom: 24px;
+                border-radius: 8px;
+            }
+        }
+
+    }
+
+    &__picture img {
+        width: 100%;
+        height: inherit;
+
+        @include breakpoint-down(medium) {
+            margin-top: 20px;
+            margin-right: 32px;
+        }
+    }
+}

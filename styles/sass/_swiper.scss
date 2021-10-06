@@ -1,0 +1,28 @@
+.swiper-wrapper {
+    margin-left: 80px;
+    display: flex;
+    align-items: center;
+    @include breakpoint-up(medium);
+
+    @include breakpoint-down(medium) {
+        margin-left: 40px;
+        width: 624px;
+        height: 86px;
+    }
+
+    @include breakpoint-down(small) {
+        margin-left: 16px;
+        width: 248px;
+        height: 35px;
+    }
+
+    img {
+
+        @include breakpoint-down(small) {
+            width: 112px;
+            height: 35px;
+        }
+    }
+
+    
+}

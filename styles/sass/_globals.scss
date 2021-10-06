@@ -1,0 +1,286 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Ubuntu';
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    background: #EDF1F4;
+    overflow-x:hidden,
+}
+
+.backgroundImage {
+    width: 100%;
+    height:auto;
+    background-image: url(../../img/backgroundBlobs.png);
+    background-position: 50% 50%;
+    padding-top: 60px;
+
+    @include breakpoint-down(medium) {
+        width: 768px;
+        height: 432px;
+        padding-top: 32px;
+    }
+
+    @include breakpoint-down(small) {
+        width: 320px;
+        height:344px;
+        padding-top: 16px;
+    }
+    
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1920px;
+    height: 960px;
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-box-shadow: 0px 0px 24px rgba(126, 120, 120, 0.1);
+            box-shadow: 0px 0px 24px rgba(126, 120, 120, 0.1);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 48px;
+    padding: 0px 60px;
+    @include breakpoint-down(large) {
+        margin: 0px 32px;
+    }
+    @include breakpoint-down(medium) {
+        max-width: 768px;
+        height: auto;
+        padding: 0px 32px;
+    }
+    @include breakpoint-down(small) {
+        max-width: 320px;
+        height: auto;
+        padding: 0px 16px;
+        border-radius: 12px;
+    }
+  }
+
+
+
+//Flexbox
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+    &-fd-col {
+        flex-direction: column;
+    }
+   
+
+}
+
+
+//Text
+h1 {
+    font-size: $font-xl;
+    line-height: 80px;
+    font-weight: bold;
+    @include breakpoint-up(medium);
+
+    @include breakpoint-down(medium) {
+        font-size: $font-med;
+        line-height: 48px;
+        /* or 133% */
+        letter-spacing: 0.05em;
+    }
+
+
+}
+
+h2 {
+    font-size: $font-l;
+    @include breakpoint-up(medium);
+    @include breakpoint-down(medium) {
+        font-size: $font-med+4;
+        line-height: 56px;
+        letter-spacing: 0.05em;
+    }
+}
+
+h4 {
+    font-size: $font-sm;
+}
+h5 {
+    font-size: $font-xss;
+    line-height: $font-xs+6;
+    font-weight: 400;
+
+}
+
+
+
+p {
+    font-size: $font-xs;
+    font-weight: 300;
+    line-height: 36px;
+    @include breakpoint-up(medium);
+    @include breakpoint-down(medium) {
+        font-size: $font-xss;
+        line-height: 24px;
+    }
+
+    @include breakpoint-down(small) {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+}
+
+input {
+    position: absolute;
+    width: 552px;
+    height: 56px;
+
+    background: $lightGreyTwo;
+    /* lighGrey_2 */
+    border: 1px solid #EAEAF3;
+    box-sizing: border-box;
+    border-radius: 12px;
+
+    &:focus {
+        background: #FFFFFF;
+        /* mainColor */
+        border: 1px solid $mainColor;
+    }
+}
+
+a {
+    text-decoration: none;
+
+}
+
+
+li {
+    list-style-type: none;
+}
+
+//SELECT
+
+.select {
+    appearance: none;
+    background: $lightGreyTwo;
+    /* lighGrey_2 */
+    border: 1px solid #a7a7ad;
+    box-sizing: border-box;
+    border-radius: 12px;
+    outline: none;
+    cursor: pointer;
+}
+
+
+// Buttons
+button,
+.button {
+    position: relative;
+    display: inline-block;
+    width: 246px;
+    height: 64px;
+    background: linear-gradient(267.71deg, #1ACACE 0%, $mainColor 100%);
+    border: 0;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: $font-xss;
+    color: white;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.25);
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+    }
+
+    &:hover {
+        box-shadow: 0px 8px 16px rgba(25, 183, 187, 0.32);
+    }
+
+    &:active {
+        box-shadow: 0px 8px 16px rgba(25, 183, 187, 0.32), inset 0px 0px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    @include breakpoint-up(medium);
+
+    @include breakpoint-down(medium) {
+        width: 210px;
+        height: 48px;
+        font-size: 16px;
+    }
+
+    @include breakpoint-down(small) {
+        width: 153px;
+        height: 36px;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+
+}
+
+.scroll {
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 876px;
+
+    @include breakpoint-down(small) {
+    @include breakpoint-up(medium) {
+        display: none;
+    }
+        @include breakpoint-down(small) {
+            display: none;
+        }
+    }
+}
+
+
+
+//Visibility
+.hide-for-mobile {
+    @include breakpoint-down(small) {
+        display: none;
+    }
+}
+
+.hide-for-tablets {
+    @include breakpoint-down(medium and large) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+
+.mobile {
+    display: none;
+    @include breakpoint-up(medium) {
+        display: block;
+    }
+}
