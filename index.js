@@ -22,7 +22,7 @@ btnHamburger.addEventListener('click', function(){
         header.classList.remove('overlay'); 
         navigation.classList.add('hide-for-tablets');
         navigation.classList.remove('overlay');  
-        logo.classList.remove('hide-for-tablets');
+        logo.classList.remove('inActive');
         networks.classList.remove('hide');
         dropdown.classList.remove('hide-for-tablets');
       
@@ -33,7 +33,7 @@ btnHamburger.addEventListener('click', function(){
         header.classList.add('overlay');
         navigation.classList.remove('hide-for-tablets');
         navigation.classList.add('overlay');
-        logo.classList.add('hide-for-tablets');
+        logo.classList.add('inActive');
         networks.classList.add('hide');
         dropdown.classList.add('hide-for-tablets');
     }  
@@ -79,8 +79,10 @@ btnDetails.forEach((elem, i) =>{
 
 document.querySelector('.header__mobile_background').addEventListener('click', () => {
     document.querySelector('.header__mobile').classList.remove('active');
+    document.querySelector('#btnHamburger').classList.toggle('open');
+
 })
 
 document.querySelector('#btnHamburger').addEventListener('click', () => {
     document.querySelector('.header__mobile').classList.toggle('active');
-})
+});

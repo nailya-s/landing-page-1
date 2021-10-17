@@ -1,0 +1,67 @@
+.activity {
+    .container {
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        height: auto;
+    }
+
+    &.examples {
+        width: 100%;
+        display: flex;
+
+        @include breakpoint-down(large) {
+            width: 100%;
+            flex-direction: column;
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        width: 32%;
+        padding: 32px;
+        vertical-align: middle;
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0px 0px 24px rgba(126, 120, 120, 0.1);
+        backdrop-filter: blur(150px);
+        border-radius: 24px;
+        @include breakpoint-down(large) {
+            width: 100%;
+            display: inline-block;
+            &:nth-child(0) {
+                order: 1;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        p {
+            font-size: $font-xss;
+        }
+        .service-picture img {
+            margin: 0 auto;
+            display: block;
+            width: 75%;
+        }
+        .btn-container  {
+            margin: 0 30%;
+            display: block;
+            padding-top: 15px;
+            > button {
+                width: 100%;
+            }
+            
+        }
+    }
+
+    
+}

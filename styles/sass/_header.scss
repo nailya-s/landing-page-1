@@ -19,17 +19,26 @@
         }
     } */
 
-    &__logo img {
-        @include breakpoint-down(medium) {
-            width: 208px;
-            height: 24px;
+    &__logo {
+        
+        &.inActive {
+            display: none;
+            @include breakpoint-down(small) {
+                display: block;
+            }
         }
-
-        @include breakpoint-down(small) {
-            width: 128px;
-            height: 15px;
+        > img {
+            width:100%;
+            @include breakpoint-down(medium) {
+                
+            }
+    
+            @include breakpoint-down(small) {
+                width: 50%;
+            }
+            
         }
-    }
+    } 
 
     @include breakpoint-down(medium) {}
 
@@ -69,12 +78,11 @@
         }
 
         &_nav {
-            width: 40%;
+            width: 100%;
             min-width: 300px;
             position: absolute;
             z-index: 102;
             height: 100%;
-            left: 5%;
             top: 33%;
             background: white;
             box-shadow: 0px -12px 24px rgba(126, 120, 120, 0.25);
@@ -257,8 +265,8 @@
         >div {
             margin-right: 16px;
             background-color: white;
-            width: 40px;
-            height: 40px;
+            width: 2.5rem;
+            height: 2.5rem;
             border-radius: 100%;
             position: relative;
             transition: .3s;
@@ -270,8 +278,8 @@
             @include breakpoint-up(medium);
 
             @include breakpoint-down(medium) {
-                width: 32px;
-                height: 32px;
+                width: 2rem;
+                height: 2rem;
             }
 
             @include breakpoint-down(small) {
@@ -282,8 +290,8 @@
 
                 &:first-child {
                     display: block;
-                    width: 28px;
-                    height: 28px;
+                    width: 1.75rem;
+                    height: 1.75rem;
                     margin: 0;
                 }
 
@@ -332,6 +340,10 @@
 
         &.hide {
             display: none;
+            @include breakpoint-down(small) {
+                display: block;
+                }
+
         }
 
 
@@ -340,12 +352,16 @@
 
     &__dropdown {
         background-color: white;
-        width: 122px;
-        height: 40px;
-        border-radius: 20px;
+        width: 7.625rem;
+        height: 2.5rem;
+        border-radius: 1.25rem;
         position: relative;
         transition: .3s;
         padding: 8px;
+        @include breakpoint-down(medium) {
+            width: 6.5rem;
+            height: 2rem;
+        }
 
         >div {
             a {
@@ -384,8 +400,8 @@
 
     &__languages {
         position: absolute;
-        width: 122px;
-        height: 104px;
+        width: 7.625rem;
+        height: 6.5rem;
         background: #FFFFFF;
         box-shadow: 0px 8px 16px rgba(116, 115, 115, 0.15);
         border-radius: 20px;
@@ -431,10 +447,12 @@
         h5 {
             text-align: center;
             font-weight: bold;
+            margin:0;
+            padding-top: 24px;
         }
 
         .list {
-
+            padding-left: 20px;
             >ul {
                 padding-left: 0;
 
@@ -444,8 +462,10 @@
                 }
 
                 .verticalLine {
-                    width: 160px;
+                    width: 280px;
                     height: 2px;
+                    margin-left: 10px;
+                    margin-bottom: 16px;
                     background-color: $mainColor;
                 }
 

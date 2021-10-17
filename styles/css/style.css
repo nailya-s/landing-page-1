@@ -154,6 +154,10 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 36px;
+}
+
 h4 {
   font-size: 32px;
 }
@@ -344,17 +348,23 @@ button:active,
     } */
 }
 
-@media (max-width: 48em) {
-  .header__logo img {
-    width: 208px;
-    height: 24px;
-  }
+.header__logo.inActive {
+  display: none;
 }
 
 @media (max-width: 26.5625em) {
-  .header__logo img {
-    width: 128px;
-    height: 15px;
+  .header__logo.inActive {
+    display: block;
+  }
+}
+
+.header__logo > img {
+  width: 100%;
+}
+
+@media (max-width: 26.5625em) {
+  .header__logo > img {
+    width: 50%;
   }
 }
 
@@ -394,12 +404,11 @@ button:active,
 }
 
 .header__mobile_nav {
-  width: 40%;
+  width: 100%;
   min-width: 300px;
   position: absolute;
   z-index: 102;
   height: 100%;
-  left: 5%;
   top: 33%;
   background: white;
   box-shadow: 0px -12px 24px rgba(126, 120, 120, 0.25);
@@ -579,8 +588,8 @@ button:active,
 .header__networks > div {
   margin-right: 16px;
   background-color: white;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 100%;
   position: relative;
   transition: .3s;
@@ -592,8 +601,8 @@ button:active,
 
 @media (max-width: 48em) {
   .header__networks > div {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
   }
 }
 
@@ -603,8 +612,8 @@ button:active,
   }
   .header__networks > div:first-child {
     display: block;
-    width: 28px;
-    height: 28px;
+    width: 1.75rem;
+    height: 1.75rem;
     margin: 0;
   }
 }
@@ -653,14 +662,27 @@ button:active,
   display: none;
 }
 
+@media (max-width: 26.5625em) {
+  .header__networks.hide {
+    display: block;
+  }
+}
+
 .header__dropdown {
   background-color: white;
-  width: 122px;
-  height: 40px;
-  border-radius: 20px;
+  width: 7.625rem;
+  height: 2.5rem;
+  border-radius: 1.25rem;
   position: relative;
   transition: .3s;
   padding: 8px;
+}
+
+@media (max-width: 48em) {
+  .header__dropdown {
+    width: 6.5rem;
+    height: 2rem;
+  }
 }
 
 .header__dropdown > div a {
@@ -696,8 +718,8 @@ button:active,
 
 .header__languages {
   position: absolute;
-  width: 122px;
-  height: 104px;
+  width: 7.625rem;
+  height: 6.5rem;
   background: #FFFFFF;
   box-shadow: 0px 8px 16px rgba(116, 115, 115, 0.15);
   border-radius: 20px;
@@ -742,6 +764,12 @@ button:active,
 .header__mobile_nav h5 {
   text-align: center;
   font-weight: bold;
+  margin: 0;
+  padding-top: 24px;
+}
+
+.header__mobile_nav .list {
+  padding-left: 20px;
 }
 
 .header__mobile_nav .list > ul {
@@ -754,8 +782,10 @@ button:active,
 }
 
 .header__mobile_nav .list > ul .verticalLine {
-  width: 160px;
+  width: 280px;
   height: 2px;
+  margin-left: 10px;
+  margin-bottom: 16px;
   background-color: #19B7BB;
 }
 
@@ -1397,5 +1427,196 @@ button:active,
   .cases__container {
     margin-left: 16px;
   }
+}
+
+.activity .container {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  height: auto;
+}
+
+.activity.examples {
+  width: 100%;
+  display: flex;
+}
+
+@media (max-width: 119.9375em) {
+  .activity.examples {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.activity__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 32%;
+  padding: 32px;
+  vertical-align: middle;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 24px rgba(126, 120, 120, 0.1);
+  backdrop-filter: blur(150px);
+  border-radius: 24px;
+}
+
+@media (max-width: 119.9375em) {
+  .activity__block {
+    width: 100%;
+    display: inline-block;
+  }
+  .activity__block:nth-child(0) {
+    order: 1;
+  }
+}
+
+.activity__block:not(:last-child) {
+  margin-right: 32px;
+}
+
+.activity__block h3 {
+  margin: 0;
+}
+
+.activity__block p {
+  font-size: 18px;
+}
+
+.activity__block .service-picture img {
+  margin: 0 auto;
+  display: block;
+  width: 75%;
+}
+
+.activity__block .btn-container {
+  margin: 0 30%;
+  display: block;
+  padding-top: 15px;
+}
+
+.activity__block .btn-container > button {
+  width: 100%;
+}
+
+.mobile__info {
+  display: flex;
+}
+
+.mobile__networks {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mobile__networks > div {
+  margin-right: 16px;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  position: relative;
+  transition: .3s;
+}
+
+.mobile__networks > div img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  transition: .3s;
+}
+
+.mobile__networks > div:hover {
+  background-color: #19B7BB;
+  /* btnShadow */
+  box-shadow: 0px 8px 16px rgba(116, 115, 115, 0.15);
+  fill: white;
+}
+
+.mobile__networks > div:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.mobile__networks > div:active {
+  background: #19B7BB;
+  box-shadow: 0px 8px 16px rgba(116, 115, 115, 0.15), inset 0px 0px 8px rgba(0, 0, 0, 0.15);
+}
+
+.mobile__dropdown {
+  background-color: white;
+  width: 122px;
+  height: 40px;
+  border-radius: 20px;
+  position: relative;
+  transition: .3s;
+  padding: 8px;
+}
+
+.mobile__dropdown > div a {
+  content: '';
+  margin-left: 24px;
+  background: #EAEAF3;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  transition: opacity 0.2s, top 0.2s, right 0.2s;
+}
+
+.mobile__dropdown > div a svg {
+  stroke: #BCBCC7;
+  margin: 6px;
+  margin-top: 7px;
+}
+
+.mobile__dropdown > div a.clicked {
+  background: #19B7BB;
+  fill: white;
+}
+
+.mobile__dropdown > div a.clicked svg {
+  filter: brightness(0) invert(1);
+  transform: rotate(180deg);
+  margin-top: 5px;
+}
+
+.mobile__dropdown > div > span {
+  margin-left: 10px;
+}
+
+.mobile__languages {
+  position: absolute;
+  width: 122px;
+  height: 104px;
+  background: #FFFFFF;
+  box-shadow: 0px 8px 16px rgba(116, 115, 115, 0.15);
+  border-radius: 20px;
+  margin-top: 154px;
+  display: none;
+}
+
+.mobile__languages.clicked {
+  display: block;
+}
+
+.mobile__languages > div {
+  padding-top: 10px;
+}
+
+.mobile__languages > div a {
+  margin-left: 10px;
+  background: none;
+}
+
+.mobile__languages > div a img {
+  margin-right: 10px;
+}
+
+.mobile__languages > div a:hover {
+  background: none;
 }
 /*# sourceMappingURL=style.css.map */
