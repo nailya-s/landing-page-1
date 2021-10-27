@@ -67,14 +67,10 @@
 
     &__partners {
         .container {
-            height: 200px;
+            max-width:1920px;
+            height: auto;
             display: flex;
             align-items: center;
-
-            @include breakpoint-down(small) {
-                width: 280px;
-                height: 67px;
-            }
 
         }
 

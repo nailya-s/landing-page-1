@@ -22,19 +22,20 @@
     &__logo {
         
         &.inActive {
+            
             display: none;
             @include breakpoint-down(small) {
                 display: block;
             }
         }
         > img {
-            width:100%;
+            max-width: 100%;
             @include breakpoint-down(medium) {
                 
             }
     
             @include breakpoint-down(small) {
-                width: 50%;
+                padding-right: 25px;
             }
             
         }
@@ -43,8 +44,6 @@
     @include breakpoint-down(medium) {}
 
     @include breakpoint-down(small) {
-        width: 300px;
-        height: 48px;
         margin: 0;
         padding-left: 0;
 
@@ -82,8 +81,8 @@
             min-width: 300px;
             position: absolute;
             z-index: 102;
+            left: 100px;
             height: 100%;
-            top: 33%;
             background: white;
             box-shadow: 0px -12px 24px rgba(126, 120, 120, 0.25);
             backdrop-filter: blur(50px);
@@ -259,7 +258,6 @@
         @include breakpoint-down(medium) {}
 
         @include breakpoint-down(small) {
-            margin-left: -144px;
         }
 
         >div {
@@ -445,10 +443,10 @@
 
         /* Note: backdrop-filter has minimal browser support */
         h5 {
-            text-align: center;
             font-weight: bold;
             margin:0;
             padding-top: 24px;
+            padding-left: 30px;
         }
 
         .list {
@@ -462,7 +460,7 @@
                 }
 
                 .verticalLine {
-                    width: 280px;
+                    width: 160px;
                     height: 2px;
                     margin-left: 10px;
                     margin-bottom: 16px;

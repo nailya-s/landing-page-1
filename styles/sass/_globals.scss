@@ -133,6 +133,17 @@ h5 {
 
 }
 
+h6 {
+    font-size: $font-xs;
+    @include breakpoint-down(medium) {
+        font-size: $font-xs;
+    }
+
+    @include breakpoint-down(small) {
+        font-size: $font-xss;
+    }
+}
+
 
 
 p {
@@ -153,21 +164,13 @@ p {
 }
 
 input {
-    position: absolute;
-    width: 552px;
+    width: 100%;
     height: 56px;
-
     background: $lightGreyTwo;
-    /* lighGrey_2 */
     border: 1px solid #EAEAF3;
     box-sizing: border-box;
     border-radius: 12px;
-
-    &:focus {
-        background: #FFFFFF;
-        /* mainColor */
-        border: 1px solid $mainColor;
-    }
+    
 }
 
 a {
